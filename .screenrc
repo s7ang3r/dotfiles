@@ -29,7 +29,6 @@ bind j focus left
 bind k focus right
 bind ^k
 bind ^s
-#bind L
 bind ^\
 bind \\ quit
 bind K kill
@@ -38,8 +37,6 @@ bind O login off
 bind } history
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 attrcolor b ".I"
-#term xterm-256color
-# включаем PgUP PgDown в xterm
 termcapinfo xterm* ti@:te@
 term screen-256color-bce
 termcap  xterm hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
