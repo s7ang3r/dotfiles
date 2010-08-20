@@ -61,12 +61,12 @@ alias -s {ogg,mp3,wav}=mpg321
 alias -s {png,gif,jpg,jpeg}=feh
 alias -s {pdf,djvu}=evince
 if [ -f /usr/bin/grc ]; then
-  alias ping="grc --colour=auto ping"
-  alias traceroute="grc --colour=auto traceroute"
-  alias make="grc --colour=auto make"
-  alias diff="grc --colour=auto diff"
-  alias cvs="grc --colour=auto cvs"
-  alias netstat="grc --colour=auto netstat"
+    alias ping="grc --colour=auto ping"
+    alias traceroute="grc --colour=auto traceroute"
+    alias make="grc --colour=auto make"
+    alias diff="grc --colour=auto diff"
+    alias cvs="grc --colour=auto cvs"
+    alias netstat="grc --colour=auto netstat"
 fi
 ################################################################################
 zstyle :compinstall filename '/home/s7ang3r/.zshrc'
@@ -84,55 +84,52 @@ xset m 6/7 1
 xrdb -load -all /home/s7ang3r/.Xdefaults
 ################################################################################
 if [[ ${TERM} == "screen-bce" || ${TERM} == "screen" || ${TERM} == "linux" ]]; then
-  #precmd () { print -Pn "\033k\033\134\033k%m[%1d]\033\134" }
-  #preexec () { print -Pn "\033k\033\134\033k%m[$1]\033\134" }
-  else
-  precmd () { print -Pn "\e]0;%n@%m: %~\a" }
-  preexec () { print -Pn "\e]0;%n@%m: $1\a" }
+    #precmd () { print -Pn "\033k\033\134\033k%m[%1d]\033\134" }
+    #preexec () { print -Pn "\033k\033\134\033k%m[$1]\033\134" }
+else
+    precmd () { print -Pn "\e]0;%n@%m: %~\a" }
+    preexec () { print -Pn "\e]0;%n@%m: $1\a" }
 fi
-
 if [ "$TERM" = "screen" ]; then
- clear
+    clear
 fi
 ################################################################################
 mkd() { mkdir $1; cd $1 }
-unpack() {
-if [ -f $1 ] ; then
-case $1 in
-*.tar.bz2)   tar xjf $1        ;;
-*.tar.gz)    tar xzf $1     ;;
-*.bz2)       bunzip2 $1       ;;
-*.rar)       unrar x $1     ;;
-*.gz)        gunzip $1     ;;
-*.tar)       tar xf $1        ;;
-*.tbz2)      tar xjf $1      ;;
-*.tgz)       tar xzf $1       ;;
-*.zip)       unzip $1     ;;
-*.Z)         uncompress $1  ;;
-*.7z)        7z x $1    ;;
-*)           echo "Cannot unpack '$1'..." ;;
-esac
-else
-echo "'$1' is not a valid file"
-fi
+unpack()
+{
+    if [ -f $1 ] ; then
+    case $1 in
+        *.tar.bz2)   tar xjf $1        ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1       ;;
+        *.rar)       unrar x $1     ;;
+        *.gz)        gunzip $1     ;;
+        *.tar)       tar xf $1        ;;
+        *.tbz2)      tar xjf $1      ;;
+        *.tgz)       tar xzf $1       ;;
+        *.zip)       unzip $1     ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1    ;;
+        *)           echo "Cannot unpack '$1'..." ;;
+    esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
-pack() {
-if [ $1 ] ; then
-case $1 in
-tbz)   tar cjvf $2.tar.bz2 $2      ;;
-tgz)   tar czvf $2.tar.gz  $2   ;;
-tar)  tar cpvf $2.tar  $2       ;;
-bz2)bzip $2 ;;
-gz)gzip -c -9 -n $2 > $2.gz ;;
-zip)   zip -r $2.zip $2   ;;
-7z)    7z a $2.7z $2    ;;
-*)     echo "'$1' Cannot be packed via pack()" ;;
-esac
-else
-echo "'$1' is not a valid file"
-fi
+pack()
+{
+    if [ $1 ] ; then
+    case $1 in
+        tbz)   tar cjvf $2.tar.bz2 $2      ;;
+        tgz)   tar czvf $2.tar.gz  $2   ;;
+        tar)  tar cpvf $2.tar  $2       ;;
+        bz2)bzip $2 ;;
+        gz)gzip -c -9 -n $2 > $2.gz ;;
+        zip)   zip -r $2.zip $2   ;;
+        7z)    7z a $2.7z $2    ;;
+        *)     echo "'$1' Cannot be packed via pack()" ;;
+    esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
-ccd() { cd && ls}
-calc() {echo "${1}"|bc -l;}
-myip() {lynx --source http://www.formyip.com/ |grep The | awk {'print $5'}}
-
