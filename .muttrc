@@ -1,0 +1,51 @@
+set spoolfile = "imaps://imap.gmail.com:993/INBOX"
+set folder = "imaps://imap.gmail.com:993/"
+set imap_user = 'user'
+set imap_pass = 'password'
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
+set record=""
+set trash="imaps://imap.gmail.com/[Gmail]/Trash"
+set imap_check_subscribed="yes"
+set imap_list_subscribed="yes"
+set smtp_url="smtp://user@smtp.gmail.com:587/"
+set smtp_pass = 'password'
+set mail_check=300
+set header_cache="~/.mutt/msgcache"
+set message_cachedir="~/.mutt/cache/bodies"
+set certificate_file="~/.mutt/certs"
+set timeout=60
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+set from = "user@gmail.com"
+set realname = "NAME NAME"
+set use_from = yes
+set envelope_from = yes
+set net_inc=5
+bind index "^" imap-fetch-mail
+set pager_index_lines=10
+set pager_context=1
+set edit_headers
+set signature=~/mail_sign
+source ~/.mutt/mutt.colors
+set sidebar_visible=yes
+set sidebar_width=20
+set beep=no
+set pgp_replysign=yes
+set fast_reply=yes
+set include=yes
+set move=no
+set check_new=yes
+set sleep_time=0
+set folder_format="%2C %t%N %8s %f"
+set reverse_name=yes
+set forward_format="Fw: %s"
+set charset="utf-8"
+set attribution="%d, %n написал:\n"
+ignore *
+unignore From: Date: Subject: To: Cc: List-Id: Newsgroups:
+hdr_order From: Date: From: To: Cc: Subject:
+set quote_regexp="^([ \t]*([^>]|[^>][^>]|[^>][^>][^>])?>)+"
+set assumed_charset="utf-8:koi8-r:windows-1251"
+set send_charset="utf-8:koi8-r"
+
