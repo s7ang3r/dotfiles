@@ -1,4 +1,7 @@
+color oceandeep
+
 map ^T :w!<CR>:!ispell check %<CR>:e! %<CR>
+
 set autoindent
 set wildmenu
 set title
@@ -23,19 +26,9 @@ set iminsert=0
 set imsearch=-1
 set spelllang=en,ru
 set wcm=<Tab>
-
-"Menu
-menu Encoding.koi8-r :e ++enc=koi8-r<CR>
-menu Encoding.windows-1251 :e ++enc=cp1251<CR>
-menu Encoding.cp866 :e ++enc=cp866<CR>
-menu Encoding.utf-8 :e ++enc=utf8 <CR>
-menu Encoding.utf-16 :e ++enc=utf16 <CR>
-map <F8> :emenu Encoding.<TAB>
-
 set mouse=a
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set laststatus=2
-color oceandeep
 set display+=lastline
 set backspace=indent,eol,start
 set ruler
@@ -57,6 +50,21 @@ set scrolloff=5
 set sidescroll=4
 set sidescrolloff=10
 set wildmode=longest,full
+"For Python
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set softtabstop=4
+
+"Menu
+menu Encoding.koi8-r :e ++enc=koi8-r<CR>
+menu Encoding.windows-1251 :e ++enc=cp1251<CR>
+menu Encoding.cp866 :e ++enc=cp866<CR>
+menu Encoding.utf-8 :e ++enc=utf8 <CR>
+menu Encoding.utf-16 :e ++enc=utf16 <CR>
+map <F8> :emenu Encoding.<TAB>
+
 syntax on
 filetype on
 filetype plugin on
@@ -72,13 +80,6 @@ set guifont=Terminus\ 10
 :nmap <C-t> :tabnew<cr>
 :imap <C-t> <ESC>:tabnew<cr>
 :map <C-w> :tabclose<cr>
-
-"For Python
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
-set softtabstop=4
 
 "Autocompletion
 function InsertTabWrapper()
@@ -104,7 +105,7 @@ set completeopt+=longest
 nmap <F4> :w!<CR>:!ispell -d russian %<CR>:!ispell -d russian %<CR>:e! %<CR>
 set background=dark
 :inoremap <F5> <C-R>=strftime("%d/%m/%y %H:%M:%S")<CR>
-
+"=====================
 function! Pep8all()
   let oldGrepPrg=&grepprg
   let &grepprg='pep8 --filename="*py" .'
