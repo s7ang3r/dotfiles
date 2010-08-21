@@ -215,5 +215,4 @@ xpdf*background: white
 xpdf*urlCommand: /usr/bin/firefox %s
 xpdf*viKeys: on
 
-
 *tkTheme: clam

@@ -30,11 +30,9 @@ net_avg_samples 2
 override_utf8_locale yes
 use_spacer none
 maximum_width 220
-hddtemp_host localhost
+hddtemp_host 127.0.0.1
 hddtemp_port 7634
-###
-#Temp: CPU: ${execi 0.5 echo "scale=1; `cat /sys/devices/platform/it87.3328/temp1_input`/1000" | bc} C - MB: ${execi 0.5 echo "scale=1; `cat /sys/devices/platform/it87.3328/temp2_input`/1000" | bc}C
-###
+
 TEXT
 [cpu]$hr
 ${color #8b9df6}CPU: (${freq}MHz) ${cpu}% ${cpubar}
@@ -54,6 +52,7 @@ STUFF ${fs_free_perc /stuff}%   ${fs_bar /stuff}
 DISTR ${fs_free_perc /stuff/distrib}%   ${fs_bar /stuff/distrib}
 MUSIC ${fs_free_perc /stuff/music}%   ${fs_bar /stuff/music}
 VIDEO ${fs_free_perc /stuff/video}%   ${fs_bar /stuff/video}
+TEMP ${fs_free_perc /tmp}%   ${fs_bar /tmp}
 OLDHD ${fs_free_perc /stuff/backup}%   ${fs_bar /stuff/backup}
 [disk usage]$hr
 ${tab 20}[sda]${tab 40}[sdb]
