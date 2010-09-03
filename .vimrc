@@ -3,53 +3,51 @@ color oceandeep
 map ^T :w!<CR>:!ispell check %<CR>:e! %<CR>
 
 set autoindent
-set wildmenu
-set title
 set autoread
-set nocompatible
-set hidden
-set autoindent
+set backspace=indent,eol,start whichwrap+=<,>,[,]
 set cindent
-set smartindent
-set history=400
-set viminfo+=h
+set display+=lastline
+set encoding=utf-8
 set expandtab
-set shiftwidth=4
-set smarttab
-set softtabstop=4
+set foldclose=all
+set foldcolumn=1
+set foldmethod=syntax
+set hidden
+set history=400
 set hlsearch
 set ignorecase
-set incsearch
-set smartcase
-set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=-1
-set spelllang=en,ru
-set wcm=<Tab>
+set incsearch
+set keymap=russian-jcukenwin
+set laststatus=2
+set linebreak
 set mouse=a
 set mousehide
-set termencoding=utf-8
 set nobackup
+set nocompatible
+set noequalalways
 set noswapfile
-set encoding=utf-8
 set novisualbell
-set t_vb=
-set backspace=indent,eol,start whichwrap+=<,>,[,]
-set showtabline=0
-set statusline=%{GitBranchInfoString()}%F%m%r%h%w\ (%{&ff}){%Y}[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
-set laststatus=2
-set display+=lastline
-set backspace=indent,eol,start
 set ruler
-set stal=1
+set shiftwidth=4
 set showcmd
 set showmode
-set foldclose=all
-set foldmethod=syntax
-set foldcolumn=1
-set noequalalways
+set showtabline=0
+set smartcase
+set smartindent
+set smarttab
+set softtabstop=4
+set spelllang=en,ru
+set stal=1
+set statusline=%{GitBranchInfoString()}%F%m%r%h%w\ (%{&ff}){%Y}[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+set t_vb=
+set termencoding=utf-8
+set title
+set viminfo+=h
+set wcm=<Tab>
+set wildmenu
 set wrap
-set linebreak
 set number
 set showmatch
 set winminheight=0
@@ -62,11 +60,6 @@ set sidescroll=4
 set sidescrolloff=10
 set wildmode=longest,full
 "For Python
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
-set softtabstop=4
 let python_highlight_all = 1
 set t_Co=256
 autocmd FileType python set omnifunc=pythoncomplete
