@@ -56,6 +56,9 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set softtabstop=4
+let python_highlight_all = 1
+set t_Co=256
+autocmd FileType python set omnifunc=pythoncomplete
 
 "Menu
 menu Encoding.koi8-r :e ++enc=koi8-r<CR>
@@ -98,6 +101,8 @@ set complete+=b
 set complete+=t
 set completeopt-=preview
 set completeopt+=longest
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 "highlight SpellErrors  guibg=Red guifg=Black cterm=underline gui=underline term=reverse
 "let spell_executable = "ispell"
