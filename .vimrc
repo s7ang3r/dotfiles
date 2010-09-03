@@ -14,9 +14,9 @@ set smartindent
 set history=400
 set viminfo+=h
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set smarttab
-set softtabstop=2
+set softtabstop=4
 set hlsearch
 set ignorecase
 set incsearch
