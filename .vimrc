@@ -30,6 +30,9 @@ set mouse=a
 set mousehide
 set termencoding=utf-8
 set novisualbell
+set t_vb=
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+set showtabline=0
 set statusline=%{GitBranchInfoString()}%F%m%r%h%w\ (%{&ff}){%Y}[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set laststatus=2
 set display+=lastline
@@ -38,8 +41,9 @@ set ruler
 set stal=1
 set showcmd
 set showmode
-"set foldclose=all
-"set foldmethod=syntax
+set foldclose=all
+set foldmethod=syntax
+set foldcolumn=1
 set noequalalways
 set wrap
 set number
