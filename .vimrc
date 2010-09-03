@@ -27,6 +27,9 @@ set imsearch=-1
 set spelllang=en,ru
 set wcm=<Tab>
 set mouse=a
+set mousehide
+set termencoding=utf-8
+set novisualbell
 set statusline=%{GitBranchInfoString()}%F%m%r%h%w\ (%{&ff}){%Y}[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set laststatus=2
 set display+=lastline
