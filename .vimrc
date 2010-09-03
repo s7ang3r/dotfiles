@@ -29,6 +29,9 @@ set wcm=<Tab>
 set mouse=a
 set mousehide
 set termencoding=utf-8
+set nobackup
+set noswapfile
+set encoding=utf-8
 set novisualbell
 set t_vb=
 set backspace=indent,eol,start whichwrap+=<,>,[,]
@@ -46,6 +49,7 @@ set foldmethod=syntax
 set foldcolumn=1
 set noequalalways
 set wrap
+set linebreak
 set number
 set showmatch
 set winminheight=0
