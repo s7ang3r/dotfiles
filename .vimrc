@@ -105,6 +105,8 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 let g:snippetsEmu_key = "<C-j>"
+vmap <C-C> "+yi
+imap <C-V> "+gPi
 
 "highlight SpellErrors  guibg=Red guifg=Black cterm=underline gui=underline term=reverse
 "let spell_executable = "ispell"
