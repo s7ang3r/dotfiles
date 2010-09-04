@@ -3,16 +3,17 @@ color oceandeep
 map ^T :w!<CR>:!ispell check %<CR>:e! %<CR>
 
 set autoindent
-set guifont=Terminus\ 10
 set autoread
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 set cindent
+set clipboard+=unnamed
 set display+=lastline
 set encoding=utf-8
 set expandtab
 set foldclose=all
 set foldcolumn=1
 set foldmethod=syntax
+set guifont=Terminus\ 10
 set hidden
 set history=400
 set hlsearch
@@ -30,15 +31,14 @@ set nocompatible
 set noequalalways
 set noswapfile
 set novisualbell
+set number
 set ruler
+set scrolloff=5
 set shiftwidth=4
 set showcmd
+set showmatch
 set showmode
 set showtabline=2
-set clipboard+=unnamed
-set number
-set scrolloff=5
-set showmatch
 set sidescroll=4
 set sidescrolloff=10
 set smartcase
