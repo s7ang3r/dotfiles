@@ -33,7 +33,7 @@ set ruler
 set shiftwidth=4
 set showcmd
 set showmode
-set showtabline=0
+set showtabline=2
 set smartcase
 set smartindent
 set smarttab
@@ -59,6 +59,8 @@ set scrolloff=5
 set sidescroll=4
 set sidescrolloff=10
 set wildmode=longest,full
+set tabpagemax=15
+
 "For Python
 let python_highlight_all = 1
 set t_Co=256
@@ -77,6 +79,7 @@ filetype on
 filetype plugin on
 filetype indent on
 set guifont=Terminus\ 10
+
 "Tabs
 :nmap <C-S-x> :tabprevious<cr>
 :nmap <C-x> :tabnext<cr>
