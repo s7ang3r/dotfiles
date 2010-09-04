@@ -3,6 +3,7 @@ color oceandeep
 map ^T :w!<CR>:!ispell check %<CR>:e! %<CR>
 
 set autoindent
+set guifont=Terminus\ 10
 set autoread
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 set cindent
@@ -34,6 +35,12 @@ set shiftwidth=4
 set showcmd
 set showmode
 set showtabline=2
+set clipboard+=unnamed
+set number
+set scrolloff=5
+set showmatch
+set sidescroll=4
+set sidescrolloff=10
 set smartcase
 set smartindent
 set smarttab
@@ -42,24 +49,18 @@ set spelllang=en,ru
 set stal=1
 set statusline=%{GitBranchInfoString()}%F%m%r%h%w\ (%{&ff}){%Y}[%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set t_vb=
+set tabpagemax=15
 set termencoding=utf-8
+set textwidth=80
 set title
 set viminfo+=h
+set virtualedit=block
 set wcm=<Tab>
 set wildmenu
-set wrap
-set number
-set showmatch
+set wildmode=longest,full
 set winminheight=0
 set winminwidth=0
-set clipboard+=unnamed
-set textwidth=80
-set virtualedit=block
-set scrolloff=5
-set sidescroll=4
-set sidescrolloff=10
-set wildmode=longest,full
-set tabpagemax=15
+set wrap
 
 "For Python
 let python_highlight_all = 1
@@ -78,7 +79,6 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-set guifont=Terminus\ 10
 
 "Tabs
 :nmap <C-S-x> :tabprevious<cr>
