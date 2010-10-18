@@ -34,8 +34,11 @@ hddtemp_host 127.0.0.1
 hddtemp_port 7634
 
 TEXT
+${alignc 65}${font :size=30}${time %H:%M:%S}${font}
+${alignc}${time %A %d}
+${alignc}${execi 60 date +"%B %Y" | tr "[:lower:]" "[:upper:]"}
 [cpu]$hr
-${color #8b9df6}CPU: (${freq}MHz) ${cpu}% ${cpubar}
+${color #8b9df6}(${freq}MHz) ${cpu}% ${cpubar}
 Average ${loadavg}
 Temp: CPU: ${execi 0.5 echo "scale=1; `cat /sys/devices/platform/it87.3328/temp1_input`/1000" | bc}C - MB: ${execi 0.5 echo "scale=1; `cat /sys/devices/platform/it87.3328/temp2_input`/1000" | bc}C
 [memory]$hr
