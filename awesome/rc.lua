@@ -40,3 +40,9 @@ tags =
 for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
 
+floatapps =
+{
+    ["MPlayer"] = true,
+    ["gimp"] = true,
+    ["mocp"] = true,
+}
