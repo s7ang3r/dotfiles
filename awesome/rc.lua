@@ -9,4 +9,5 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 terminal = "urxvt"
 editor = "vim"
 
+modkey = "Mod4"
 
