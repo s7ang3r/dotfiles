@@ -44,5 +44,10 @@ floatapps =
 {
     ["MPlayer"] = true,
     ["gimp"] = true,
-    ["mocp"] = true,
+    ["mocp"] = true
+}
+
+titlebarapps = 
+{
+    ["gimp"] = true
 }
