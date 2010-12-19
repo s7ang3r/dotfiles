@@ -51,3 +51,7 @@ titlebarapps =
 {
     ["gimp"] = true
 }
+
+mysystray = widget({ type = "systray" })
+mytextclock = awful.widget.textclock({ align = "right" })
+
