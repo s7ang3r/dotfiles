@@ -54,4 +54,6 @@ titlebarapps =
 
 mysystray = widget({ type = "systray" })
 mytextclock = awful.widget.textclock({ align = "right" })
+mystatusbar = statusbar({ position = "top", name = "mystatusbar" })
+mystatusbar.screen = 1
 
