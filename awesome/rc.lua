@@ -29,7 +29,7 @@ layouts =
 
 tags = 
 {
-    names  = { "main", "www", "im", "coding", "gimp", "office", 7, 8, 9 },
+    names  = { "main", "www", "im", "coding", "gimp", "office", "media", "term", 9 },
     layout =
     {
         layouts[1], layouts[2], layouts[1], layouts[5], layouts[6],
