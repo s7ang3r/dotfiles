@@ -38,23 +38,8 @@ tags =
             layouts[1], layouts[5], layouts[5], layouts[5]
         }
 }
+
 for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
-
-floatapps =
-{
-    ["MPlayer"] = true,
-    ["gimp"] = true,
-    ["mocp"] = true
-}
-
-titlebarapps = 
-{
-    ["gimp"] = true
-}
-
-mysystray = widget({ type = "systray" })
-mytextclock = awful.widget.textclock({ align = "right" })
-mystatusbar = statusbar({ position = "top", name = "mystatusbar" })
-mystatusbar.screen = 1
+end
 
