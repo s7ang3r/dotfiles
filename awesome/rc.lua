@@ -14,34 +14,30 @@ exec   = awful.util.spawn
 sexec  = awful.util.spawn_with_shell
 
 beautiful.init(home .. "/.config/awesome/theme.lua")
+
 modkey = "Mod4"
 
 layouts =
 {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    awful.layout.suit.floating, --1
+    awful.layout.suit.tile,     --2
+    awful.layout.suit.tile.top, --3
+    awful.layout.suit.fair,     --4
+    awful.layout.suit.max,      --5
+    awful.layout.suit.magnifier --6
 }
 
-tags = 
+tags =
 {
-    names  = { "main", "www", "im", "coding", "gimp", "office", "media", "term", 9 },
+    names  =
+        {
+            "main", "www", "im", "coding"
+        },
     layout =
-    {
-        layouts[1], layouts[2], layouts[1], layouts[5], layouts[6],
-        layouts[12], layouts[9], layouts[3], layouts[7]
-    }
+        {
+            layouts[1], layouts[5], layouts[5], layouts[5]
+        }
 }
-
 for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
 
