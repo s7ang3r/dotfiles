@@ -5,11 +5,15 @@ require("beautiful")
 require("naughty")
 require("debian.menu")
 require("vicious")
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 terminal = "urxvt"
 editor = "vim"
+editor_cmd = terminal .. " -e " .. editor
+home   = os.getenv("HOME")
+exec   = awful.util.spawn
+sexec  = awful.util.spawn_with_shell
 
+beautiful.init(home .. "/.config/awesome/theme.lua")
 modkey = "Mod4"
 
 layouts =
