@@ -4,6 +4,7 @@ require("awful.rules")
 require("beautiful")
 require("naughty")
 require("debian.menu")
+require("vicious")
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 terminal = "urxvt"
