@@ -56,18 +56,18 @@ theme.titlebar_maximized_button_focus_active  = theme.confdir .. "/titlebar/maxi
 -- }}}
 
 -- {{{ Layout
-theme.layout_fairh = "/layouts/fairhw.png"
-theme.layout_fairv = "/layouts/fairvw.png"
-theme.layout_floating  = "/layouts/floatingw.png"
-theme.layout_magnifier = "/layouts/magnifierw.png"
-theme.layout_max = "/layouts/maxw.png"
-theme.layout_fullscreen = "/layouts/fullscreenw.png"
-theme.layout_tilebottom = "/layouts/tilebottomw.png"
-theme.layout_tileleft   = "/layouts/tileleftw.png"
-theme.layout_tile = "/layouts/tilew.png"
-theme.layout_tiletop = "/layouts/tiletopw.png"
-theme.layout_spiral  = "/layouts/spiralw.png"
-theme.layout_dwindle = "/layouts/dwindlew.png"
+theme.layout_fairh = theme.confdir .. "/layouts/fairhw.png"
+theme.layout_fairv = theme.confdir .. "/layouts/fairvw.png"
+theme.layout_floating  = theme.confdir .. "/layouts/floatingw.png"
+theme.layout_magnifier = theme.confdir .. "/layouts/magnifierw.png"
+theme.layout_max = theme.confdir .. "/layouts/maxw.png"
+theme.layout_fullscreen = theme.confdir .. "/layouts/fullscreenw.png"
+theme.layout_tilebottom = theme.confdir .. "/layouts/tilebottomw.png"
+theme.layout_tileleft   = theme.confdir .. "/layouts/tileleftw.png"
+theme.layout_tile = theme.confdir .. "/layouts/tilew.png"
+theme.layout_tiletop = theme.confdir .. "/layouts/tiletopw.png"
+theme.layout_spiral  = theme.confdir .. "/layouts/spiralw.png"
+theme.layout_dwindle = theme.confdir .. "/layouts/dwindlew.png"
 -- }}}
 
 -- {{{ Widgets
