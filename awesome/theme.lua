@@ -1,4 +1,9 @@
+-- {{{ Main
 theme = {}
+theme.confdir       = awful.util.getdir("config")
+theme.wallpaper_cmd = { "awsetbg /home/s7ang3r/.config/awesome/wallpaper-40962.jpg" }
+-- }}}
+
 
 theme.font          = "terminus 8"
 
@@ -41,8 +46,6 @@ theme.titlebar_maximized_button_normal_inactive = "/home/s7ang3r/.config/awesome
 theme.titlebar_maximized_button_focus_inactive  = "/home/s7ang3r/.config/awesome/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_active = "/home/s7ang3r/.config/awesome/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "/home/s7ang3r/.config/awesome/titlebar/maximized_focus_active.png"
-
-theme.wallpaper_cmd = { "awsetbg /home/s7ang3r/.config/awesome/wallpaper-40962.jpg" }
 
 theme.layout_fairh = "/home/s7ang3r/.config/awesome/layouts/fairhw.png"
 theme.layout_fairv = "/home/s7ang3r/.config/awesome/layouts/fairvw.png"
