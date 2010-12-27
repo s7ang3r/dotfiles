@@ -71,10 +71,10 @@ theme.layout_dwindle = theme.confdir .. "/layouts/dwindlew.png"
 -- }}}
 
 -- {{{ Widgets
-theme.widget_net = theme.confdir .. "/home/s7ang3r/.config/awesome/icons/down.png"
-theme.widget_netup = theme.confdir .. "/home/s7ang3r/.config/awesome/icons/up.png"
-theme.widget_cpu = theme.confdir .. "/home/s7ang3r/.config/awesome/icons/cpu.png"
-theme.widget_mem = theme.confdir .. "/home/s7ang3r/.config/awesome/icons/mem.png"
+theme.widget_net = theme.confdir .. "/icons/down.png"
+theme.widget_netup = theme.confdir .. "/icons/up.png"
+theme.widget_cpu = theme.confdir .. "/icons/cpu.png"
+theme.widget_mem = theme.confdir .. "/icons/mem.png"
 -- }}}
 
 theme.tasklist_floating_icon = "/home/s7ang3r/.config/awesome/tasklist/floatingw.png"
