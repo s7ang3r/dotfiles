@@ -23,15 +23,18 @@ theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
 -- }}}
 
+-- {{{ Taglist
+theme.taglist_squares_sel   = theme.confdir .. "/taglist/squarefw.png"
+theme.taglist_squares_unsel = theme.confdir .. "/taglist/squarew.png"
+-- }}}
 
-theme.taglist_squares_sel   = "/home/s7ang3r/.config/awesome/taglist/squarefw.png"
-theme.taglist_squares_unsel = "/home/s7ang3r/.config/awesome/taglist/squarew.png"
-theme.tasklist_floating_icon = "/home/s7ang3r/.config/awesome/tasklist/floatingw.png"
-
+-- {{{ Menu
 theme.menu_submenu_icon = "/home/s7ang3r/.config/awesome/submenu.png"
 theme.menu_height = "15"
 theme.menu_width  = "100"
+-- }}}
 
+-- {{{ Titlebar
 theme.titlebar_close_button_normal = "/home/s7ang3r/.config/awesome/titlebar/close_normal.png"
 theme.titlebar_close_button_focus  = "/home/s7ang3r/.config/awesome/titlebar/close_focus.png"
 theme.titlebar_ontop_button_normal_inactive = "/home/s7ang3r/.config/awesome/titlebar/ontop_normal_inactive.png"
@@ -50,7 +53,9 @@ theme.titlebar_maximized_button_normal_inactive = "/home/s7ang3r/.config/awesome
 theme.titlebar_maximized_button_focus_inactive  = "/home/s7ang3r/.config/awesome/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_active = "/home/s7ang3r/.config/awesome/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "/home/s7ang3r/.config/awesome/titlebar/maximized_focus_active.png"
+-- }}}
 
+-- {{{ Layout
 theme.layout_fairh = "/home/s7ang3r/.config/awesome/layouts/fairhw.png"
 theme.layout_fairv = "/home/s7ang3r/.config/awesome/layouts/fairvw.png"
 theme.layout_floating  = "/home/s7ang3r/.config/awesome/layouts/floatingw.png"
@@ -63,6 +68,7 @@ theme.layout_tile = "/home/s7ang3r/.config/awesome/layouts/tilew.png"
 theme.layout_tiletop = "/home/s7ang3r/.config/awesome/layouts/tiletopw.png"
 theme.layout_spiral  = "/home/s7ang3r/.config/awesome/layouts/spiralw.png"
 theme.layout_dwindle = "/home/s7ang3r/.config/awesome/layouts/dwindlew.png"
+-- }}}
 
 -- {{{ Widgets
 theme.widget_net = "/home/s7ang3r/.config/awesome/icons/down.png"
@@ -71,6 +77,7 @@ theme.widget_cpu = "/home/s7ang3r/.config/awesome/icons/cpu.png"
 theme.widget_mem = "/home/s7ang3r/.config/awesome/icons/mem.png"
 -- }}}
 
+theme.tasklist_floating_icon = "/home/s7ang3r/.config/awesome/tasklist/floatingw.png"
 theme.awesome_icon = "/home/s7ang3r/.config/awesome/awesome16.png"
 
 return theme
