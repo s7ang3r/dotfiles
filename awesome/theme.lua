@@ -4,9 +4,11 @@ theme.confdir       = awful.util.getdir("config")
 theme.wallpaper_cmd = { "awsetbg /home/s7ang3r/.config/awesome/wallpaper-40962.jpg" }
 -- }}}
 
-
+-- {{{ Styles
 theme.font          = "terminus 8"
+-- }}}
 
+-- {{{ Colors
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
 theme.bg_urgent     = "#ff0000"
@@ -19,6 +21,8 @@ theme.border_width  = "1"
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
+-- }}}
+
 
 theme.taglist_squares_sel   = "/home/s7ang3r/.config/awesome/taglist/squarefw.png"
 theme.taglist_squares_unsel = "/home/s7ang3r/.config/awesome/taglist/squarew.png"
