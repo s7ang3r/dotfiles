@@ -57,3 +57,11 @@ theme.layout_tiletop = "/home/s7ang3r/.config/awesome/layouts/tiletopw.png"
 theme.layout_spiral  = "/home/s7ang3r/.config/awesome/layouts/spiralw.png"
 theme.layout_dwindle = "/home/s7ang3r/.config/awesome/layouts/dwindlew.png"
 
+theme.widget_net = "/home/s7ang3r/.config/awesome/icons/down.png"
+theme.widget_netup = "/home/s7ang3r/.config/awesome/icons/up.png"
+theme.widget_cpu = "/home/s7ang3r/.config/awesome/icons/cpu.png"
+theme.widget_mem = "/home/s7ang3r/.config/awesome/icons/mem.png"
+
+theme.awesome_icon = "/home/s7ang3r/.config/awesome/awesome16.png"
+
+return theme
