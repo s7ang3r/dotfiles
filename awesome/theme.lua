@@ -77,7 +77,7 @@ theme.widget_cpu = theme.confdir .. "/icons/cpu.png"
 theme.widget_mem = theme.confdir .. "/icons/mem.png"
 -- }}}
 
-theme.tasklist_floating_icon = "/home/s7ang3r/.config/awesome/tasklist/floatingw.png"
-theme.awesome_icon = "/home/s7ang3r/.config/awesome/awesome16.png"
+theme.tasklist_floating_icon = "/tasklist/floatingw.png"
+theme.awesome_icon = "/awesome16.png"
 
 return theme
