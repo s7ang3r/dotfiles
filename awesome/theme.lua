@@ -1,11 +1,12 @@
 -- {{{ Main
 theme = {}
 theme.confdir       = awful.util.getdir("config")
-theme.wallpaper_cmd = { "awsetbg /home/s7ang3r/.config/awesome/wallpaper-40962.jpg" }
+theme.wallpaper_cmd = { "awsetbg /home/s7ang3r/wallpapers/wallpaper-40962.jpg" }
+-- theme.wallpaper_cmd = { "awsetbg /home/s7ang3r/wallpapers/wallpaper-40962.jpg" }
 -- }}}
 
 -- {{{ Styles
-theme.font          = "terminus 8"
+theme.font          = "terminus 9"
 -- }}}
 
 -- {{{ Colors
@@ -17,7 +18,7 @@ theme.fg_normal     = "#aaaaaa"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
-theme.border_width  = "1"
+theme.border_width  = "0"
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
@@ -75,6 +76,7 @@ theme.widget_net = theme.confdir .. "/icons/down.png"
 theme.widget_netup = theme.confdir .. "/icons/up.png"
 theme.widget_cpu = theme.confdir .. "/icons/cpu.png"
 theme.widget_mem = theme.confdir .. "/icons/mem.png"
+theme.widget_fs = theme.confdir .. "/icons/fs.png"
 -- }}}
 
 theme.tasklist_floating_icon = theme.confdir .. "/tasklist/floatingw.png"

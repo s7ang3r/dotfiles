@@ -35,7 +35,7 @@ tags =
         },
     layout =
         {
-            layouts[1], layouts[5], layouts[5], layouts[5]
+            layouts[1], layouts[5], layouts[5], layouts[2]
         }
 }
 
@@ -72,9 +72,9 @@ cpuicon = widget({ type = "imagebox" })
 cpuicon.image = image(beautiful.widget_cpu)
 -- cputhermal
 cputhermalwidget  = widget({ type = "textbox" })
-cputhermalwidget.width = 30
+cputhermalwidget.width = 40
 cputhermalwidget.align = "center"
-vicious.register(cputhermalwidget, vicious.widgets.thermal, " $1°C", 20, { "it87.3328", "core"} )
+vicious.register(cputhermalwidget, vicious.widgets.thermal, "($1°C)", 20, { "it87.3328", "core"} )
 -- memory
 memwidget = widget({ type = "textbox" })
 memwidget.width = 30
@@ -92,6 +92,25 @@ dnicon = widget({ type = "imagebox" })
 dnicon.image = image(beautiful.widget_net)
 upicon = widget({ type = "imagebox" })
 upicon.image = image(beautiful.widget_netup)
+-- fsusage
+fsicon = widget({ type = "imagebox" })
+fsicon.image = image(beautiful.widget_fs)
+fswidget_r = widget({ type = "textbox" })
+vicious.register(fswidget_r, vicious.widgets.fs, "R:${/ avail_gb} ", 37) -- root
+fswidget_h = widget({ type = "textbox" })
+vicious.register(fswidget_h, vicious.widgets.fs, "H:${/home avail_gb} ", 37) -- home
+fswidget_s = widget({ type = "textbox" })
+vicious.register(fswidget_s, vicious.widgets.fs, "S:${/stuff avail_gb} ", 37) -- stuff
+fswidget_m = widget({ type = "textbox" })
+vicious.register(fswidget_m, vicious.widgets.fs, "M:${/stuff/music avail_gb} ", 37) -- music
+fswidget_v = widget({ type = "textbox" })
+vicious.register(fswidget_v, vicious.widgets.fs, "V:${/stuff/video avail_gb} ", 37) -- video
+fswidget_d = widget({ type = "textbox" })
+vicious.register(fswidget_d, vicious.widgets.fs, "D:${/stuff/distrib avail_gb} ", 37) -- distrib
+fswidget_b = widget({ type = "textbox" })
+vicious.register(fswidget_b, vicious.widgets.fs, "B:${/stuff/backup avail_gb} ", 37) -- backup
+fswidget_t = widget({ type = "textbox" })
+vicious.register(fswidget_t, vicious.widgets.fs, "T:${/tmp avail_gb} ", 37) -- tmp
 -- textclock
 mytextclock = awful.widget.textclock({ align = "center" })
 -- systray
@@ -159,7 +178,7 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 16 })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -171,11 +190,12 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         separator,
-        upicon, netwidget, dnicon,
+        netwidget,
         separator,
-        memwidget, memicon,
+        memwidget,
         separator,
-        cputhermalwidget, cpuwidget, cpuicon,
+        cputhermalwidget,
+        cpuwidget,
         separator,
         s == 1 and mysystray or nil,
         mytasklist[s],
@@ -322,6 +342,7 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
+                     size_hints_honor = false,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -330,8 +351,12 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Firefox" },
+      properties = { tag = tags[1][2] } },
+    { rule = { class = "Iceweasel" },
+      properties = { tag = tags[1][2] } },
+    { rule = { class = "Google-chrome" },
+      properties = { tag = tags[1][2] } },
 }
 -- }}}
 
