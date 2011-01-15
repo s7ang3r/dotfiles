@@ -182,10 +182,10 @@ URxvt.transparent: true
 URxvt.foreground: white
 URxvt.scrollBar: false
 URxvt.tintColor: white
-URxvt.fading: 50
+URxvt.fading: 80
 URxvt.fadeColor: black
-URxvt.shading: 0
-URxvt.inheritPixmap: false
+URxvt.shading: 20
+URxvt.inheritPixmap: true
 URxvt.pointerColor: black
 URxvt.pointerColor2: white
 URxvt.cursorBlink: true
