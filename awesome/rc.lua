@@ -1,10 +1,12 @@
+-- s7ang3r
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
 require("beautiful")
-require("naughty")
 require("debian.menu")
 require("vicious")
+require("naughty")
+--require("shifty")
 
 terminal = "urxvt"
 editor = "vim"
@@ -31,11 +33,11 @@ tags =
 {
     names  =
         {
-            "main", "www", "im", "coding"
+            "main", "www", "im", "coding", "media"
         },
     layout =
         {
-            layouts[1], layouts[5], layouts[5], layouts[2]
+            layouts[1], layouts[5], layouts[5], layouts[2], layouts[2]
         }
 }
 
@@ -63,6 +65,8 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
+FgCol = "#999999"
+-- '<span color="' .. FgCol .. '">%</span>'
 -- cpu
 cpuwidget = widget({ type = "textbox" })
 cpuwidget.width = 30
@@ -96,31 +100,32 @@ upicon.image = image(beautiful.widget_netup)
 fsicon = widget({ type = "imagebox" })
 fsicon.image = image(beautiful.widget_fs)
 fswidget_r = widget({ type = "textbox" })
-vicious.register(fswidget_r, vicious.widgets.fs, "R:${/ avail_gb} ", 37) -- root
+vicious.register(fswidget_r, vicious.widgets.fs, "root:${/ avail_gb}Gb ", 37) -- root
 fswidget_h = widget({ type = "textbox" })
-vicious.register(fswidget_h, vicious.widgets.fs, "H:${/home avail_gb} ", 37) -- home
+vicious.register(fswidget_h, vicious.widgets.fs, "home:${/home avail_gb}Gb ", 37) -- home
 fswidget_s = widget({ type = "textbox" })
-vicious.register(fswidget_s, vicious.widgets.fs, "S:${/stuff avail_gb} ", 37) -- stuff
+vicious.register(fswidget_s, vicious.widgets.fs, "stuff:${/stuff avail_gb}Gb ", 37) -- stuff
 fswidget_m = widget({ type = "textbox" })
-vicious.register(fswidget_m, vicious.widgets.fs, "M:${/stuff/music avail_gb} ", 37) -- music
+vicious.register(fswidget_m, vicious.widgets.fs, "music:${/stuff/music avail_gb}Gb ", 37) -- music
 fswidget_v = widget({ type = "textbox" })
-vicious.register(fswidget_v, vicious.widgets.fs, "V:${/stuff/video avail_gb} ", 37) -- video
+vicious.register(fswidget_v, vicious.widgets.fs, "video:${/stuff/video avail_gb}Gb ", 37) -- video
 fswidget_d = widget({ type = "textbox" })
-vicious.register(fswidget_d, vicious.widgets.fs, "D:${/stuff/distrib avail_gb} ", 37) -- distrib
+vicious.register(fswidget_d, vicious.widgets.fs, "distrib:${/stuff/distrib avail_gb}Gb ", 37) -- distrib
 fswidget_b = widget({ type = "textbox" })
-vicious.register(fswidget_b, vicious.widgets.fs, "B:${/stuff/backup avail_gb} ", 37) -- backup
+vicious.register(fswidget_b, vicious.widgets.fs, "backup:${/stuff/backup avail_gb}Gb ", 37) -- backup
 fswidget_t = widget({ type = "textbox" })
-vicious.register(fswidget_t, vicious.widgets.fs, "T:${/tmp avail_gb} ", 37) -- tmp
+vicious.register(fswidget_t, vicious.widgets.fs, "tmp:${/tmp avail_gb}Gb ", 37) -- tmp
 -- textclock
 mytextclock = awful.widget.textclock({ align = "center" })
 -- systray
 mysystray = widget({ type = "systray" })
 -- separator
 separator = widget({ type = "textbox" })
-separator.text  = "|"
+separator.text  = " | "
 
 -- Create a wibox for each screen and add it
 mywibox = {}
+statusbar = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
@@ -179,6 +184,7 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s, height = 16 })
+    statusbar[s] = awful.wibox({ position = "bottom", screen = s, height = 16 })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -190,16 +196,30 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         separator,
-        netwidget,
-        separator,
-        memwidget,
-        separator,
-        cputhermalwidget,
-        cpuwidget,
-        separator,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
+    }
+
+    statusbar[s].widgets =
+    {
+        cpuwidget,
+        cputhermalwidget,
+        separator,
+        memwidget,
+        separator,
+        netwidget,
+        separator,
+        fswidget_r,
+        fswidget_h,
+        fswidget_s,
+        fswidget_m,
+        fswidget_v,
+        fswidget_d,
+        fswidget_b,
+        fswidget_t,
+        separator,
+        layout = awful.widget.layout.horizontal.leftright
     }
 end
 -- }}}
@@ -346,17 +366,21 @@ awful.rules.rules = {
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
+    { rule = { class = "Qbittorrent" },
+      properties = { floating = true } },
+    { rule = { class = "Transmission" },
+      properties = { floating = true } },
+    --
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2] } },
     { rule = { class = "Iceweasel" },
       properties = { tag = tags[1][2] } },
     { rule = { class = "Google-chrome" },
       properties = { tag = tags[1][2] } },
+    { rule = { class = "Tkabber" },
+      properties = { tag = tags[1][3] } },
 }
 -- }}}
 
