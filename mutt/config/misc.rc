@@ -1,0 +1,31 @@
+set attribution = "* %n <%a> [%{%d.%m.%Y. @%H:%M:%S %Z}]:\n"
+
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+set move = no
+
+set editor = vim
+set nobeep
+
+set date_format = "* %n <%a> [%{%d.%m.%Y. @%H:%M:%S %Z}]:\n"
+set folder_format = "%2C %t%N %8s %f"
+set reverse_name = yes
+set forward_format = "Fw: %s"
+set charset = "utf-8"
+#set attribution="%d, %n написал:\n"
+set use_from = yes
+set envelope_from = yes
+set net_inc = 5
+
+set shell = "/usr/bin/urxvt"
+
+set fast_reply = yes
+set include = yes
+
+set check_new=yes
+set sleep_time=0
+
+set quote_regexp="^([ \t]*([^>]|[^>][^>]|[^>][^>][^>])?>)+"
+set assumed_charset="utf-8:koi8-r:windows-1251"
+set send_charset="utf-8:koi8-r"

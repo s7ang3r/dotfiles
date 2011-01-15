@@ -1,0 +1,1 @@
+bind index "^" imap-fetch-mail

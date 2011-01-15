@@ -1,0 +1,40 @@
+set realname = ""
+set from = ""
+
+set signature = ~/.mutt/sign
+
+set imap_user = ""
+set imap_pass = ""
+
+set folder = "imaps://imap.gmail.com:993"
+set postponed = "+[Gmail]/Drafts"
+set spoolfile = "+INBOX"
+set mbox="+[Gmail]/All Mail"
+set record = "+[Gmail]/Sent Mail"
+set trash="+[Gmail]/Trash"
+set imap_check_subscribed = yes
+set imap_list_subscribed = yes
+set smtp_url = ""
+set smtp_pass = ""
+set copy
+
+set message_cachedir = ~/.mutt/cache/
+set header_cache = ~/.mutt/msgcache
+set certificate_file = ~/.mutt/certificates
+unset message_cache_clean
+
+set mailcap_path = /usr/local/etc/mime.types
+
+set mail_check = 300
+set timeout=60
+
+set move = no
+set noconfirmappend
+set delete = ask-yes
+set nomark_old
+
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+
+set sidebar_visible = yes
+set sidebar_width = 20
