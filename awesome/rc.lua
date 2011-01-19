@@ -1,4 +1,4 @@
--- s7ang3r
+--s7ang3r
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
@@ -8,17 +8,18 @@ require("vicious")
 require("naughty")
 --require("shifty")
 
+-- Vars
 terminal = "urxvt"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 home   = os.getenv("HOME")
 exec   = awful.util.spawn
 sexec  = awful.util.spawn_with_shell
-
-beautiful.init(home .. "/.config/awesome/theme.lua")
-
 modkey = "Mod4"
+beautiful.init(home .. "/.config/awesome/theme.lua")
+FgCol = "#999999"
 
+-- Layouts and tags
 layouts =
 {
     awful.layout.suit.floating, --1
@@ -33,7 +34,7 @@ tags =
 {
     names  =
         {
-            "main", "www", "im", "coding", "media"
+            "1:main", "2:www", "3:im", "4:coding", "5:media"
         },
     layout =
         {
@@ -45,27 +46,32 @@ for s = 1, screen.count() do
     tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 
--- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
+
+-- Menu
+myawesomemenu =
+{
+            { "manual", terminal .. " -e man awesome" },
+            { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
+            { "restart", awesome.restart },
+            { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+mymainmenu = awful.menu({
+                         items =
+                         {
+                              { "awesome", myawesomemenu, beautiful.awesome_icon },
+                              { "Debian", debian.menu.Debian_menu.Debian },
+                              { "open terminal", terminal }
+                         }
+                       })
 
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
--- }}}
+mylauncher = awful.widget.launcher({
+                                    image = image(beautiful.awesome_icon),
+                                    menu = mymainmenu
+                                  })
 
--- {{{ Wibox
-FgCol = "#999999"
+
+-- Wibox
 -- '<span color="' .. FgCol .. '">%</span>'
 -- cpu
 cpuwidget = widget({ type = "textbox" })
@@ -115,6 +121,7 @@ fswidget_b = widget({ type = "textbox" })
 vicious.register(fswidget_b, vicious.widgets.fs, "backup:${/stuff/backup avail_gb}Gb ", 37) -- backup
 fswidget_t = widget({ type = "textbox" })
 vicious.register(fswidget_t, vicious.widgets.fs, "tmp:${/tmp avail_gb}Gb ", 37) -- tmp
+-- mdp
 -- textclock
 mytextclock = awful.widget.textclock({ align = "center" })
 -- systray
@@ -183,8 +190,8 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 16 })
-    statusbar[s] = awful.wibox({ position = "bottom", screen = s, height = 16 })
+    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 14 })
+    statusbar[s] = awful.wibox({ position = "bottom", screen = s, height = 14 })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -222,17 +229,15 @@ for s = 1, screen.count() do
         layout = awful.widget.layout.horizontal.leftright
     }
 end
--- }}}
 
--- {{{ Mouse bindings
+-- Mouse bindings
 root.buttons(awful.util.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
--- }}}
 
--- {{{ Key bindings
+-- Key bindings
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
@@ -352,9 +357,8 @@ clientbuttons = awful.util.table.join(
 
 -- Set keys
 root.keys(globalkeys)
--- }}}
 
--- {{{ Rules
+-- Rules
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -382,9 +386,8 @@ awful.rules.rules = {
     { rule = { class = "Tkabber" },
       properties = { tag = tags[1][3] } },
 }
--- }}}
 
--- {{{ Signals
+-- Signals
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
     -- Add a titlebar
@@ -413,4 +416,4 @@ end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
--- }}}
+
