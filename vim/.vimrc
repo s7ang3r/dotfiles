@@ -1,4 +1,5 @@
 color oceandeep
+"color xoria256
 
 map ^T :w!<CR>:!ispell check %<CR>:e! %<CR>
 
@@ -21,7 +22,7 @@ set ignorecase
 set iminsert=0
 set imsearch=-1
 set incsearch
-set keymap=russian-jcukenwin
+"set keymap=russian-jcukenwin
 set laststatus=2
 set linebreak
 set mouse=a
