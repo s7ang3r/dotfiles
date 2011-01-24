@@ -62,9 +62,10 @@ theme.layout_spiral  = theme.confdir .. "/layouts/spiralw.png"
 theme.layout_dwindle = theme.confdir .. "/layouts/dwindlew.png"
 
 -- Widgets
-theme.widget_net = theme.confdir .. "/icons/down.png"
-theme.widget_netup = theme.confdir .. "/icons/up.png"
+theme.widget_net = theme.confdir .. "/icons/net_down.png"
+theme.widget_netup = theme.confdir .. "/icons/net_up.png"
 theme.widget_cpu = theme.confdir .. "/icons/cpu.png"
+theme.widget_cputherm = theme.confdir .. "/icons/therm.png"
 theme.widget_mem = theme.confdir .. "/icons/mem.png"
 theme.widget_fs = theme.confdir .. "/icons/fs.png"
 
