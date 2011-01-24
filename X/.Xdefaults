@@ -190,7 +190,7 @@ URxvt.pointerColor: black
 URxvt.pointerColor2: white
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: true
-URxvt.termName: rxvt
+URxvt.termName: rxvt-256color
 URxvt.loginShell: true
 URxvt.internalBorder: 0
 URxvt.borderless: true
@@ -206,6 +206,7 @@ Rxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.urgentOnBell: True
 
 !X P D F
 xpdf*enableFreetype: yes
