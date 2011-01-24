@@ -1,5 +1,5 @@
 source /etc/profile
-################################################################################
+
 BROWSER=firefox
 DISPLAY=:0
 EDITOR='vim'
@@ -7,38 +7,66 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 MANPAGER='/usr/bin/most -s'
 MOZ_DISABLE_PANGO=1
-PAGER='less'
+PAGER='vim'
 PATH=~/bin:$PATH
 SAVEHIST=10000
 VISUAL='vim'
-################################################################################
+
 autoload -U promptinit
 promptinit
 prompt adam2
-################################################################################
+
 limit -s
 limit core 0
 limit stack 8192
 umask 022
 unlimit
-################################################################################
+
+autoload zmv
 autoload -U zcalc
 autoload -Uz compinit
-autoload colors && colors
 compinit
+autoload colors && colors
+
 setopt extendedglob
 setopt menucomplete
+
 zmodload -a autocomplete
 zmodload -a colors
 zmodload -a complist
-################################################################################
-setopt autopushd pushdminus extendedglob rcquotes
-setopt autoresume histignoredups pushdsilent noclobber
-setopt correctall autocd recexact longlistjobs
-setopt hist_ignore_all_dups hist_ignore_space inc_append_history
-setopt notify globdots correct pushdtohome cdablevars autolist
-setopt zle multibyte numeric_glob_sort histexpiredupsfirst histfindnodups
-################################################################################
+
+setopt autopushd
+setopt pushdminus
+setopt extendedglob
+setopt rcquotes
+setopt autoresume
+setopt histignoredups
+setopt pushdsilent
+setopt noclobber
+setopt correctall
+setopt autocd
+setopt recexact
+setopt longlistjobs
+setopt hist_ignore_all_dups 
+setopt hist_ignore_space
+setopt inc_append_history
+setopt notify
+setopt globdots
+setopt correct
+setopt pushdtohome
+setopt cdablevars
+setopt autolist
+setopt zle
+setopt multibyte
+setopt numeric_glob_sort
+setopt histexpiredupsfirst
+setopt histfindnodups
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias cp='cp --interactive'
 alias df='df --human-readable'
 alias du='du --human-readable'
@@ -51,11 +79,9 @@ alias mv='mv --interactive'
 alias rm='rm --interactive'
 alias tkabber='wish8.5 ~/bin/tkabber/tkabber.tcl'
 alias w3m='w3m -cookie'
-################################################################################
-alias -s htm=w3m
-alias -s html=w3m
 alias -s py=python
 alias -s txt=$PAGER
+alias -s {html, htm}=w3m
 alias -s {avi,mpeg,mpg,mov,m2v,flv,ogm,mkv}=mplayer
 alias -s {ogg,mp3,wav}=mplayer
 alias -s {pdf,djvu}=evince
@@ -68,7 +94,7 @@ if [ -f /usr/bin/grc ]; then
     alias ping="grc --colour=auto ping"
     alias traceroute="grc --colour=auto traceroute"
 fi
-################################################################################
+
 zstyle :compinstall filename '/home/s7ang3r/.zshrc'
 zstyle ':completion:*' menu yes select
 zstyle ':completion:*:*:*:default' menu yes select
@@ -78,11 +104,11 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:killall:*' command 'ps -au $USER -o cmd'
 zstyle ':completion:*:processes' command 'ps -au $USER'
-################################################################################
+
 xrdb -load -all /home/s7ang3r/.Xdefaults
 xset b off
 xset m 6/7 1
-################################################################################
+
 if [[ ${TERM} == "screen-bce" || ${TERM} == "screen" || ${TERM} == "linux" ]]; then
     #precmd () { print -Pn "\033k\033\134\033k%m[%1d]\033\134" }
     #preexec () { print -Pn "\033k\033\134\033k%m[$1]\033\134" }
@@ -93,9 +119,14 @@ fi
 if [ "$TERM" = "screen" ]; then
     clear
 fi
-################################################################################
-mkd() { mkdir $1; cd $1 }
-unpack()
+
+function mkd()
+{
+    mkdir $1;
+    cd $1
+}
+
+function unpack()
 {
     if [ -f $1 ] ; then
     case $1 in
@@ -116,7 +147,7 @@ unpack()
         echo "'$1' is not a valid file"
     fi
 }
-pack()
+function pack()
 {
     if [ $1 ] ; then
     case $1 in
@@ -133,3 +164,14 @@ pack()
         echo "'$1' is not a valid file"
     fi
 }
+
+function calc()
+{
+    echo "$*" | bc;
+}
+
+function mktar()
+{
+    tar czf "${1%%/}.tar.gz" "${1%%/}/";
+}
+
