@@ -1,4 +1,4 @@
-source $HOME/.mutt/config/colors.rc
+#source $HOME/.mutt/config/colors.rc
 source $HOME/.mutt/config/headers.rc
 source $HOME/.mutt/config/bindings.rc
 source $HOME/.mutt/config/lists.rc
