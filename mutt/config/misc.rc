@@ -6,7 +6,7 @@ set certificate_file = ~/.mutt/certificates
 set move = no
 
 set editor = vim
-set nobeep
+set beep_new = yes
 
 set date_format = "* %n <%a> [%{%d.%m.%Y. @%H:%M:%S %Z}]:\n"
 set folder_format = "%2C %t%N %8s %f"
