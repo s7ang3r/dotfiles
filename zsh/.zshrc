@@ -57,7 +57,7 @@ alias -s html=w3m
 alias -s py=python
 alias -s txt=$PAGER
 alias -s {avi,mpeg,mpg,mov,m2v,flv,ogm,mkv}=mplayer
-alias -s {ogg,mp3,wav}=mpg321
+alias -s {ogg,mp3,wav}=mplayer
 alias -s {pdf,djvu}=evince
 alias -s {png,gif,jpg,jpeg}=feh
 if [ -f /usr/bin/grc ]; then
