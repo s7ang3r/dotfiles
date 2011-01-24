@@ -38,7 +38,7 @@ tags =
         },
     layout =
         {
-            layouts[1], layouts[5], layouts[5], layouts[2], layouts[2]
+            layouts[1], layouts[2], layouts[2], layouts[2], layouts[2]
         }
 }
 
@@ -74,6 +74,8 @@ mylauncher = awful.widget.launcher({
 -- Wibox
 -- '<span color="' .. FgCol .. '">%</span>'
 -- cpu
+cpuicon = widget({ type = "imagebox" })
+cpuicon.image = image(beautiful.widget_cpu)
 cpuwidget = widget({ type = "textbox" })
 cpuwidget.width = 30
 cpuwidget.align = "center"
@@ -81,11 +83,15 @@ vicious.register(cpuwidget, vicious.widgets.cpu, "$1%")
 cpuicon = widget({ type = "imagebox" })
 cpuicon.image = image(beautiful.widget_cpu)
 -- cputhermal
+cputhermicon = widget({ type = "imagebox" })
+cputhermicon.image = image(beautiful.widget_cputherm)
 cputhermalwidget  = widget({ type = "textbox" })
 cputhermalwidget.width = 40
 cputhermalwidget.align = "center"
-vicious.register(cputhermalwidget, vicious.widgets.thermal, "($1°C)", 20, { "it87.3328", "core"} )
+vicious.register(cputhermalwidget, vicious.widgets.thermal, "$1°C", 20, { "it87.3328", "core"} )
 -- memory
+memoryicon = widget({ type = "imagebox" })
+memoryicon.image = image(beautiful.widget_mem)
 memwidget = widget({ type = "textbox" })
 memwidget.width = 30
 memwidget.align = "center"
@@ -97,7 +103,8 @@ memicon.image = image(beautiful.widget_mem)
 netwidget = widget({ type = "textbox" })
 netwidget.width = 75
 netwidget.align = "center"
-vicious.register(netwidget, vicious.widgets.net, '<span color="#CC9393">${eth0 down_kb}</span> <span color="#7F9F7F">${eth0 up_kb}</span>', 3)
+-- vicious.register(netwidget, vicious.widgets.net, '<span color="#CC9393">${eth0 down_kb}</span> <span color="#7F9F7F">${eth0 up_kb}</span>', 3)
+vicious.register(netwidget, vicious.widgets.net, '${eth0 down_kb} / ${eth0 up_kb}', 3)
 dnicon = widget({ type = "imagebox" })
 dnicon.image = image(beautiful.widget_net)
 upicon = widget({ type = "imagebox" })
@@ -202,7 +209,6 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        separator,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -210,12 +216,15 @@ for s = 1, screen.count() do
 
     statusbar[s].widgets =
     {
+        cpuicon,
         cpuwidget,
+        cputhermicon,
         cputhermalwidget,
-        separator,
+        memoryicon,
         memwidget,
-        separator,
+        dnicon,
         netwidget,
+        upicon,
         separator,
         fswidget_r,
         fswidget_h,
