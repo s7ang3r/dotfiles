@@ -2,57 +2,8 @@
 *customization: -color
 #endif
 
-*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-koi8-r
-
-emacs*Background: Black
-emacs*Foreground: White
-emacs*bitmapIcon: on
-emacs.geometry: 200x70
-emacs*font: -*-terminus-medium-*-*--14-*-*-*-*-*-iso10646-1
-
-Emacs*Background: Black
-Emacs*Foreground: White
-Emacs*bitmapIcon: on
-Emacs.geometry: 200x70
-
-XTerm*background: Black
-XTerm*foreground: Snow
-XTerm*reverseVideo: false
-XTerm*scrollBar: true
-XTerm*geometry: 200x70
-XTerm*reverseWrap: true
-XTerm*fullCursor: true
-XTerm*scrollTtyOutput: off
-XTerm*scrollKey: on
-
-Rxvt*background: Black
-Rxvt*foreground: snow
-Rxvt*reverseVideo: false
-Rxvt*scrollBar: false
-Rxvt*geometry: 200x70
-Rxvt*reverseWrap: true
-Rxvt*fullCursor: true
-Rxvt*scrollTtyOutput: off
-Rxvt*scrollKey: on
-Rxvt*shading: 100
-
-!G V I M
-Vim*background: black
-Vim*geometry: 200x70
-
-!A T E R M
-Aterm*geometry: 200x70
-Aterm*background: black
-Aterm*foreground: snow
-Aterm*transparent: True
-Aterm*shading: 40
-Aterm*visualBell: True
-Aterm*mapAlert: True
-Aterm*scrollBar: False
-Aterm*transpscrollbar: True
-Aterm*scrollBar_right: True
-Aterm*termName: xterm
-Aterm*saveLines: 512
+*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+*boldFont: -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
 
 Xft.antialias: true
 
@@ -207,6 +158,7 @@ URxvt.urlLauncher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 URxvt.urgentOnBell: True
+URxvt.geometry: 200x70
 
 !X P D F
 xpdf*enableFreetype: yes
