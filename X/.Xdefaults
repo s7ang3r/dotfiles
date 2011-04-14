@@ -24,7 +24,7 @@ xcalc.ti.bevel.screen.LCD.shadowWidth:      0
 xcalc.ti.bevel.screen.M.background:         #000000
 xcalc.ti.bevel.screen.M.foreground:         LightSeaGreen
 xcalc.ti.bevel.screen.P.background:         #000000
-xcalc.ti.bevel.screen.P.foreground: Yellow
+xcalc.ti.bevel.screen.P.foreground:         Yellow
 xcalc.ti.Command.foreground: White
 xcalc.ti.Command.background: #777777
 xcalc.ti.button5.background: Orange3
