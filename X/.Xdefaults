@@ -4,27 +4,26 @@
 
 *font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
 *boldFont: -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
-
 Xft.antialias: true
 
 !X C A L C
-xcalc*geometry: 200x275
-xcalc.ti.bevel.background: #111111
-xcalc.ti.bevel.screen.background: #000000
-xcalc.ti.bevel.screen.DEG.background: #000000
-xcalc.ti.bevel.screen.DEG.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.GRAD.background: #000000
-xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.RAD.background: #000000
-xcalc.ti.bevel.screen.RAD.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.INV.background: #000000
-xcalc.ti.bevel.screen.INV.foreground: Red
-xcalc.ti.bevel.screen.LCD.background: #000000
-xcalc.ti.bevel.screen.LCD.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.LCD.shadowWidth: 0
-xcalc.ti.bevel.screen.M.background: #000000
-xcalc.ti.bevel.screen.M.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.P.background: #000000
+xcalc*geometry:                             200x275
+xcalc.ti.bevel.background:                  #111111
+xcalc.ti.bevel.screen.background:           #000000
+xcalc.ti.bevel.screen.DEG.background:       #000000
+xcalc.ti.bevel.screen.DEG.foreground:       LightSeaGreen
+xcalc.ti.bevel.screen.GRAD.background:      #000000
+xcalc.ti.bevel.screen.GRAD.foreground:      LightSeaGreen
+xcalc.ti.bevel.screen.RAD.background:       #000000
+xcalc.ti.bevel.screen.RAD.foreground:       LightSeaGreen
+xcalc.ti.bevel.screen.INV.background:       #000000
+xcalc.ti.bevel.screen.INV.foreground:       Red
+xcalc.ti.bevel.screen.LCD.background:       #000000
+xcalc.ti.bevel.screen.LCD.foreground:       LightSeaGreen
+xcalc.ti.bevel.screen.LCD.shadowWidth:      0
+xcalc.ti.bevel.screen.M.background:         #000000
+xcalc.ti.bevel.screen.M.foreground:         LightSeaGreen
+xcalc.ti.bevel.screen.P.background:         #000000
 xcalc.ti.bevel.screen.P.foreground: Yellow
 xcalc.ti.Command.foreground: White
 xcalc.ti.Command.background: #777777
