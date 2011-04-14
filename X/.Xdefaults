@@ -52,26 +52,25 @@ XCalc*ShapeStyle:                           rectangle
 
 
 !X C L O C K
-XClock*width:110
-XClock*height:110
-XClock*padding:4
-XClock*update:5
-XClock*analog: true
-XClock*clock.update: 0
+XClock*width:                               110
+XClock*height:                              110
+XClock*padding:                             4
+XClock*update:                              5
+XClock*analog:                              true
+XClock*clock.update:                        0
 XClock*render: false
 XClock*sharp: false
 XClock*background: white
 XClock*foreground: black
 XClock*hands: SlateGray4
 XClock*highlight: black
-XClock*hourColor: black
-XClock*minuteColor: black
-XClock*secondColor: black
-XClock*majorColor: black
-XClock*minorColor: black
+XClock*hourColor:                           black
+XClock*minuteColor:                         black
+XClock*secondColor:                         black
+XClock*majorColor:                          black
+XClock*minorColor:                          black
 
 !X F O N T S E L
-!XFontSel*sampleText.background: TEXTBG
 XFontSel*menu*showUnselectable: false
 XFontSel*MenuButton.shadowWidth: 0
 XFontsel*Toggle*ToggleStyle: check
