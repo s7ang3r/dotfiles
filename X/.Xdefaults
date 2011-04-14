@@ -121,7 +121,6 @@ XFontsel*MenuButton*MenuButtonStyle: select
 .xmessage.form.okay.shapeStyle: rectangle
 .xmessage.form.okay.background: #777777
 .xmessage.form.okay.foreground: snow
-!xmessage*message*background: snow
 xmessage*defaultButton: okay
 Xmessage.form.message.Scroll:  WhenNeeded
 
@@ -166,4 +165,6 @@ xpdf*background: white
 xpdf*urlCommand: /usr/bin/firefox %s
 xpdf*viKeys: on
 
+! T K
 *tkTheme: clam
+
