@@ -31,4 +31,11 @@ theme.proxy_inactive_menu_bg    = '#FFF'
 theme.sbar_fg         = "#fff"
 theme.sbar_bg         = "#000"
 
+theme.dbar_fg         = "#fff"
+theme.dbar_bg         = "#000"
+theme.dbar_error_fg   = "#F00"
+
+theme.ibar_fg           = "#000"
+theme.ibar_bg           = "#fff"
+
 
