@@ -28,4 +28,7 @@ theme.proxy_active_menu_bg      = '#FFF'
 theme.proxy_inactive_menu_fg    = '#888'
 theme.proxy_inactive_menu_bg    = '#FFF'
 
+theme.sbar_fg         = "#fff"
+theme.sbar_bg         = "#000"
+
 
