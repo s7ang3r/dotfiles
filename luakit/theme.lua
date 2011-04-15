@@ -50,4 +50,5 @@ theme.loading_bg        = "#000"
 theme.trust_fg          = "#0F0"
 theme.notrust_fg        = "#F00"
 
+return theme
 
