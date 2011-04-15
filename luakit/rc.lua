@@ -34,3 +34,13 @@ require "go_input"
 require "go_next_prev"
 require "go_up"
 
+local w = (session and session.restore())
+if w then
+    for i, uri in ipairs(uris) do
+        w:new_tab(uri, i == 1)
+    end
+else
+    -- Or open new window
+    window.new(uris)
+end
+
