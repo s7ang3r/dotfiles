@@ -92,3 +92,16 @@ new_mode("command", {
 })
 
 
+new_mode("lua", {
+    enter = function (w)
+        w:set_prompt(">")
+        w:set_input("")
+    end,
+    activate = function (w, text)
+        w:set_input("")
+        local ret = assert(loadstring("return function(w) return "..text.." end"))()(w)
+        if ret then print(ret) end
+    end,
+    history = {maxlen = 50},
+})
+
