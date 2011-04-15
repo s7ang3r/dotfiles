@@ -70,4 +70,25 @@ new_mode("passthrough", {
     end,
 })
 
+new_mode("command", {
+    enter = function (w)
+        w:set_prompt()
+        w:set_input(":")
+    end,
+    changed = function (w, text)
+        if not string.match(text, "^:") then w:set_mode() end
+    end,
+    activate = function (w, text)
+        w:set_mode()
+        local cmd = string.sub(text, 2)
+        local success, match = pcall(w.match_cmd, w, cmd)
+        if not success then
+            w:error("In command call: " .. match)
+        elseif not match then
+            w:error(string.format("Not a browser command: %q", cmd))
+        end
+    end,
+    history = {maxlen = 50},
+})
+
 
