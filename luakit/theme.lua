@@ -12,3 +12,7 @@ theme.error_bg = "#F00"
 theme.warning_fg = "#F00"
 theme.warning_bg = "#FFF"
 
+theme.notif_fg = "#444"
+theme.notif_bg = "#FFF"
+
+
