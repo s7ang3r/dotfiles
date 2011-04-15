@@ -8,4 +8,8 @@ require "globals"
 lousy.theme.init(lousy.util.find_config("theme.lua"))
 theme = assert(lousy.theme.get(), "failed to load theme")
 
+require "window"
+require "webview"
+require "modes"
+require "binds"
 
