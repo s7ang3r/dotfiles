@@ -1,4 +1,3 @@
--- Global variables for luakit
 globals = {
     homepage            = "http://luakit.org/",
     scroll_step         = 40,
@@ -9,7 +8,6 @@ globals = {
     default_window_size = "800x600",
 }
 
--- Make useragent
 local arch = string.match(({luakit.spawn_sync("uname -sm")})[2], "([^\n]*)")
 local lkv  = string.format("luakit/%s", luakit.version)
 local wkv  = string.format("WebKitGTK+/%d.%d.%d", luakit.webkit_major_version, luakit.webkit_minor_version, luakit.webkit_micro_version)
@@ -66,5 +64,4 @@ domain_props = { --[[
         ["enable-private-browsing"] = true,
     }, ]]
 }
-
 
