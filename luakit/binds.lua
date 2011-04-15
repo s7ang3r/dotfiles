@@ -44,3 +44,27 @@ menu_binds = {
     key({"Shift"},   "Tab",     function (w) w.menu:move_up()   end),
 }
 
+add_binds("all", {
+    key({},          "Escape",  function (w) w:set_mode() end),
+    key({"Control"}, "[",       function (w) w:set_mode() end),
+    but({},     8,  function (w) w:back()     end),
+    but({},     9,  function (w) w:forward()  end),
+    but({},     2,  function (w, m)
+        if not m.context.editable then
+            local uri = w:get_current().hovered_uri
+            if uri then
+                w:new_tab(uri, false)
+            else
+                uri = luakit.get_selection()
+                if uri then w:navigate(w:search_open(uri)) end
+            end
+        end
+    end),
+    but({"Control"}, 1, function (w, m)
+        local uri = w:get_current().hovered_uri
+        if uri then
+            w:new_tab(uri, false)
+        end
+    end),
+})
+
