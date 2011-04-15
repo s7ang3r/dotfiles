@@ -9,4 +9,6 @@ theme.loaded_fg  = "#33AADD"
 theme.error_fg = "#FFF"
 theme.error_bg = "#F00"
 
+theme.warning_fg = "#F00"
+theme.warning_bg = "#FFF"
 
