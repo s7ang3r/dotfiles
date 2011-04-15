@@ -35,4 +35,12 @@ function add_cmds(cmds, before)
     end
 end
 
+menu_binds = {
+    key({},          "j",       function (w) w.menu:move_down() end),
+    key({},          "k",       function (w) w.menu:move_up()   end),
+    key({},          "Down",    function (w) w.menu:move_down() end),
+    key({},          "Up",      function (w) w.menu:move_up()   end),
+    key({},          "Tab",     function (w) w.menu:move_down() end),
+    key({"Shift"},   "Tab",     function (w) w.menu:move_up()   end),
+}
 
