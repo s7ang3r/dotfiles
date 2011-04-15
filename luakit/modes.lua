@@ -49,4 +49,25 @@ for name, func in pairs({
     is_mode  = function (w, name) return name == mget(w) end,
 }) do window.methods[name] = func end
 
+new_mode("normal", {
+    enter = function (w)
+        w:set_prompt()
+        w:set_input()
+    end,
+})
+
+new_mode("insert", {
+    enter = function (w)
+        w:set_prompt("-- INSERT --")
+        w:set_input()
+    end,
+})
+
+new_mode("passthrough", {
+    enter = function (w)
+        w:set_prompt("-- PASS THROUGH --")
+        w:set_input()
+    end,
+})
+
 
